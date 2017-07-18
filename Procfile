@@ -1,1 +1,1 @@
-web: gunicorn bilalchatpy.wsgi --log-file -
+web: gunicorn bilalchatpy.main --log-file -
