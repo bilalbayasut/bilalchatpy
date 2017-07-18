@@ -49,7 +49,7 @@ def webhook():
             return HttpResponse(request.GET.get('hub.challenge'))
         return HttpResponse('Error, wrong validation token')
 
-    if request.method == "POST":
+  if request.method == "POST":
         body = request.body
         print("BODY", body)
         messaging_events = json.loads(body.decode("utf-8"))
