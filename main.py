@@ -8,9 +8,9 @@ def webhook():
   page.handle_webhook(request.get_data(as_text=True))
   return "ok"
 
- @app.route('/')
- def index():
-     return "ok"
+@app.route('/')
+def index():
+    return "ok"
 
 @page.handle_message
 def message_handler(event):
