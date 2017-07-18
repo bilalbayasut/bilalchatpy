@@ -1,1 +1,1 @@
-web: python bilalchatpy.main.py
+web: python main.py
