@@ -34,7 +34,7 @@ from flask import Flask
 import os
 from pymessenger.bot import Bot
 
-FB_VERIFY_TOKEN = 'EAABuZCmQx9iYBAKo5FB5DWkoZAgmSie4uLi8EbhP6yrwKeTscQIZB6v341nWFBKBsnr30BTxUHZAMC92AyEYHhw6UsNveU3XexBbRrEpyHmi3D3gwijy4g8AN9ZCv3tY5sWt0Eckq9Mgmg2wBxyM0omUgLQHOtB4GIhdoiZBBPfgZDZD'
+# FB_VERIFY_TOKEN = 'EAABuZCmQx9iYBAKo5FB5DWkoZAgmSie4uLi8EbhP6yrwKeTscQIZB6v341nWFBKBsnr30BTxUHZAMC92AyEYHhw6UsNveU3XexBbRrEpyHmi3D3gwijy4g8AN9ZCv3tY5sWt0Eckq9Mgmg2wBxyM0omUgLQHOtB4GIhdoiZBBPfgZDZD'
 
 app = Flask(__name__)
 
