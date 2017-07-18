@@ -20,3 +20,6 @@ def message_handler(event):
 def after_send(payload, response):
   """:type payload: fbmq.Payload"""
   print("complete")
+
+if __name__ == '__main__':
+    app.run()
