@@ -42,6 +42,23 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+@app.route('/webhook', methods=['POST'])
+def webhook():
+  if request.method == "GET":
+        if (request.GET.get('hub.verify_token') == 'bilalchatbot'):
+            return HttpResponse(request.GET.get('hub.challenge'))
+        return HttpResponse('Error, wrong validation token')
+
+    if request.method == "POST":
+        body = request.body
+        print("BODY", body)
+        messaging_events = json.loads(body.decode("utf-8"))
+        print("JSON BODY", body)
+        sender_id = messaging_events["entry"][0]["messaging"][0]["sender"]["id"]
+        message = messaging_events["entry"][0]["messaging"][0]["message"]["text"]
+        respond_FB(sender_id, message)
+        return HttpResponse('Received.')
+
 if __name__ == '__main__':
     app.debug=True
     app.run()
