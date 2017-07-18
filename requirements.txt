@@ -1,1 +1,4 @@
 Flask==0.11
+gunicorn==19.7.1
+requests==2.18.1
+fbmq==2.0.3
