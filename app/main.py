@@ -44,9 +44,7 @@ def hello():
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-  if request.method == 'POST':
-        pass
-    elif request.method == 'GET':
+    if request.method == 'GET':
         if request.args.get('hub.verify_token') == 'EAABuZCmQx9iYBAKo5FB5DWkoZAgmSie4uLi8EbhP6yrwKeTscQIZB6v341nWFBKBsnr30BTxUHZAMC92AyEYHhw6UsNveU3XexBbRrEpyHmi3D3gwijy4g8AN9ZCv3tY5sWt0Eckq9Mgmg2wBxyM0omUgLQHOtB4GIhdoiZBBPfgZDZD':
             return request.args.get('hub.challenge')
         return "Wrong Verify Token"
