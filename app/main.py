@@ -31,10 +31,10 @@
 #     app.run()
 
 from flask import Flask
-
+import os
 from pymessenger.bot import Bot
 
-
+FB_VERIFY_TOKEN = 'EAABuZCmQx9iYBAKo5FB5DWkoZAgmSie4uLi8EbhP6yrwKeTscQIZB6v341nWFBKBsnr30BTxUHZAMC92AyEYHhw6UsNveU3XexBbRrEpyHmi3D3gwijy4g8AN9ZCv3tY5sWt0Eckq9Mgmg2wBxyM0omUgLQHOtB4GIhdoiZBBPfgZDZD'
 
 app = Flask(__name__)
 
@@ -44,11 +44,14 @@ def hello():
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-  if request.method == "GET":
-        if (request.GET.get('hub.verify_token') == 'bilalchatbot'):
-            return HttpResponse(request.GET.get('hub.challenge'))
-        return HttpResponse('Error, wrong validation token')
- 
+  if request.method == 'POST':
+        pass
+    elif request.method == 'GET':
+        if request.args.get('hub.verify_token') == os.environ.get('FB_VERIFY_TOKEN'):
+            return request.args.get('hub.challenge')
+        return "Wrong Verify Token"
+    return "Nothing"
+
   # if request.method == "POST":
   #       body = request.body
   #       print("BODY", body)
