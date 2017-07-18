@@ -1,6 +1,6 @@
 from flask import Flask, request
 from fbmq import Page
-
+app = Flask(__name__)
 page = fbmq.Page('EAABuZCmQx9iYBAFlmZCnLaQmbKjJrifZATYitHuW1XZAhcCifV8HWKgfz2jLMLeJZAZCbG5wr3mLM0F7EnnwuZCYnaaS8iaYPeGHnj3tUtenfKjRXyzhmiQR8ZAlIzXehYm2d6D4dvIPzZBdihs9W1gu2DV732KAQDii1TLvMO5zo6QZDZD')
 
 @app.route('/webhook', methods=['POST'])
